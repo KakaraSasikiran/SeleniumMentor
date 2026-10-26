@@ -21,10 +21,16 @@ public class Meena extends App {
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //		handle_alert_box(By.cssSelector("button[name='alertbox']"));
 //		driver.findElement(By.cssSelector("")).click();
-		WebElement element = driver.findElement(By.cssSelector("iframe#courses-iframe"));
-		driver.switchTo().frame(element).findElement(By.xpath("(//a[text()='Courses'])[1]")).click();
-		driver.switchTo().defaultContent();
-		driver.findElement(By.cssSelector("input[value='radio1']")).click();
+//		WebElement element = driver.findElement(By.cssSelector("iframe#courses-iframe"));
+//		driver.switchTo().frame(element).findElement(By.xpath("(//a[text()='Courses'])[1]")).click();
+//		driver.switchTo().defaultContent();
+//		driver.findElement(By.cssSelector("input[value='radio1']")).click();
+		driver.findElement(By.xpath("//button[text()='Click for JS Confirm']")).click();
+		System.out.println("Message:"+driver.switchTo().alert().getText());
+		driver.switchTo().alert().accept();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50000));
+		driver.findElement(By.xpath("//button[text()='Click for JS Prompt']")).click();
+		driver.switchTo().alert().accept();
 	}
 
 }

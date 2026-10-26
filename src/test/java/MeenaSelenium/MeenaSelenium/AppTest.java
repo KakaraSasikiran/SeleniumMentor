@@ -1,19 +1,41 @@
 package MeenaSelenium.MeenaSelenium;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-import org.junit.jupiter.api.Test;
-
-/**
- * Unit test for simple App.
- */
 public class AppTest {
 
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue() {
-        assertTrue(true);
-    }
+	public WebDriver driver;
+	@BeforeSuite
+	public void init() {
+		System.out.println("Before suite");
+		driver = new ChromeDriver();
+	}
+	@BeforeTest
+	public void oness() {
+		System.out.println("Onbes");
+		driver.get("https://www.google.com");
+	}
+	@AfterSuite
+	public void tests() {
+		System.out.println("Tests");
+		driver.close();
+		
+	}
+	@Test
+	public void testName() throws Exception {
+		System.out.println("Ones");
+		System.out.println(driver.getCurrentUrl());
+		System.out.println("Register");
+	}
+	@Test(dependsOnMethods = "testName")
+	public void onesY() throws Exception {
+		System.out.println(driver.getTitle());
+		System.out.println("Login");
+	}
+   
 }
