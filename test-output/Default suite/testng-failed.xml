@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="MeenaSelenium.MeenaSelenium.Upload_Download">
+      <class name="MeenaSelenium.MeenaSelenium.Extents">
         <methods>
-          <include name="init"/>
-          <include name="upload"/>
+          <include name="testName"/>
         </methods>
-      </class> <!-- MeenaSelenium.MeenaSelenium.Upload_Download -->
+      </class> <!-- MeenaSelenium.MeenaSelenium.Extents -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,6 +2,7 @@ package MeenaSelenium.MeenaSelenium;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
@@ -28,14 +29,14 @@ public class AppTest {
 	}
 	@Test
 	public void testName() throws Exception {
-		System.out.println("Ones");
-		System.out.println(driver.getCurrentUrl());
-		System.out.println("Register");
+		Assert.assertEquals(driver.getTitle(),"ONes");
+		
+		
 	}
-	@Test(dependsOnMethods = "testName")
-	public void onesY() throws Exception {
-		System.out.println(driver.getTitle());
-		System.out.println("Login");
-	}
+//	@Test
+//	public void onesY() throws Exception {
+//		System.out.println(driver.getTitle());
+//		System.out.println("Login");
+//	}
    
 }
